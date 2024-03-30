@@ -5,7 +5,24 @@
 
 k = int(input('Введите количество суши: '))
 
-if k % 5 == 0 or k % 7 == 0 or ((k - 5) % 7 == 0) or ((k - 7) % 5 == 0):
-    print('да')
-else:
-    print('нет')
+
+def check_s(k):
+    if k % 7 == 0:
+        print('da')
+        return
+    elif k % 5 == 0:
+        print('da')
+        return
+
+    while k > 0:
+        k -= 5
+        if k % 7 == 0:
+            print('da')
+            return
+        elif k % 5 == 0:
+            print('da')
+            return
+    print('net')
+
+
+check_s(k)
